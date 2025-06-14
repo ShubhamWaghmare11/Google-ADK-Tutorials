@@ -14,6 +14,7 @@ class EmailContent(BaseModel):
 root_agent = LlmAgent(
     name='email_agent',
     model='gemini-2.0-flash',
+    description="generates professional emails with structured subject and body",
     instruction="""
         You are an Email Generation Assitant.
         Your task is to generate a professionale mail based on the user's request.
@@ -23,8 +24,6 @@ root_agent = LlmAgent(
         "body":"Email body here with proper paragraphs and formatting",
         }
     """,
-    description="generates professional emails with structured subject and body",
     output_schema=EmailContent,
     output_key="email"
-
 )
